@@ -1,0 +1,14 @@
+.entete{
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #0D242B;
+  border-bottom: 1px solid red;
+  &__titre{
+    margin: 0;
+    padding: 10px;
+  }
+  &__slogan{
+    margin: 0;
+    padding: 10px;
+  }
+}
