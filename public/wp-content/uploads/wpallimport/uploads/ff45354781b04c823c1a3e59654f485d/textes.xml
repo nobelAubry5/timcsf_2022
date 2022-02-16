@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<id><![CDATA[<br />]]></id>
+	</node>
+	<node>
+		<id><![CDATA[<b>Fatal error</b>:  Uncaught TypeError: PhpMyAdmin\Encoding::convertString(): Return value must be of type string, bool returned in /Applications/MAMP/bin/phpMyAdmin5/libraries/classes/Encoding.php:199]]></id>
+	</node>
+	<node>
+		<id><![CDATA[Stack trace:]]></id>
+	</node>
+	<node>
+		<id><![CDATA[#0 /Applications/MAMP/bin/phpMyAdmin5/libraries/classes/Export.php(182): PhpMyAdmin\Encoding::convertString('utf-8', 'windows-1252', '&quot]]></id>
+		<titre><![CDATA[4&quot]]></titre>
+		<texte><![CDATA[]]></texte>
+		<clientele><![CDATA[&quot]]></clientele>
+	</node>
+	<node>
+		<id><![CDATA[#1 /Applications/MAMP/bin/phpMyAdmin5/libraries/classes/Plugins/Export/ExportCsv.php(336): PhpMyAdmin\Export-&gt]]></id>
+		<titre><![CDATA[outputHandler('&quot]]></titre>
+		<texte><![CDATA[4&quot]]></texte>
+		<clientele><![CDATA[]]></clientele>
+	</node>
+	<node>
+		<id><![CDATA[#2 /Applications/MAMP/bin/phpMyAdmin5/libraries/classes/Export.php(1117): PhpMyAdmin\Plugins\Export\ExportCsv-&gt]]></id>
+		<titre><![CDATA[exportData('rpni4_timcsf_20...', 'textes', '\n', 'index.php?route...', 'SELECT `id`, `t...', Array)]]></titre>
+	</node>
+	<node>
+		<id><![CDATA[#3 /Applications/MAMP/bin/phpMyAdmin5/libraries/classes/Controllers/ExportController.php(613): PhpMyAdmin\Export-&gt]]></id>
+		<titre><![CDATA[exportTable('rpni4_timcsf_20...', 'textes', 'data', Object(PhpMyAdmin\Plugins\Export\ExportExcel), '\n', 'index.php?route...', 'table', false, false, false, false, '1', '0', '0', '', Array)]]></titre>
+	</node>
+	<node>
+		<id><![CDATA[#4 /Applications/MAMP/bin/phpMyAdmin5/libraries/classes/Routing.php(186): PhpMyAdmin\Controllers\ExportController-&gt]]></id>
+		<titre><![CDATA[index(Array)]]></titre>
+	</node>
+	<node>
+		<id><![CDATA[#5 /Applications/MAMP/bin/phpMyAdmin5/index.php(19): PhpMyAdmin\Routing::callControllerForRoute('/export', Object(FastRoute\Dispatcher\GroupCountBased), Object(Symfony\Component\DependencyInjection\ContainerBuilder))]]></id>
+	</node>
+	<node>
+		<id><![CDATA[#6 {main}]]></id>
+	</node>
+	<node>
+		<id><![CDATA[  thrown in <b>/Applications/MAMP/bin/phpMyAdmin5/libraries/classes/Encoding.php</b> on line <b>199</b><br />]]></id>
+	</node>
+</data>

@@ -21,11 +21,26 @@
     <h1 class="entete__titre">
     <a href="<?php bloginfo("url");?>" title="<?php bloginfo("name");?>"><?php bloginfo("name");?></a>
     </h1>
-    <h2 class="entete__slogan"><?php bloginfo("description");?></h2>
+    
+    <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/instagram.png" alt="" />
+    <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/twitter.png" alt="" />
+    <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/facebook.png" alt="" />
+    <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/linkedin.png" alt="" />
+    
+    <?php if(has_nav_menu('principal')){?>
+        <nav class="navigation">
+            <?php wp_nav_menu(array('theme_location'=>'principal'));?>
+        </nav>
+    <?php } ?>
+    <style>
+    .entete{
+        color:white;
+    }
+    </style>
+    
 </header>
-<?php if(has_nav_menu('principal')){?>
-<nav class="navigation">
-    <?php wp_nav_menu(array('theme_location'=>'principal'));?>
-</nav>
-<?php } ?>
+
 <div class="contenu">
+
+
+
