@@ -73,34 +73,62 @@
     <!--Profession-->
     <div class="formation__professions">
     <h4>Professions</h4>
-    
+    <ul class="liste__professions">
+        <li class="puces__professions">
     <div class="carte__profession">
+    <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/profession.jpg" alt="" />
     <h4><?php echo get_the_title(126);?></h4>
     <p><?php echo get_field("texte", 126) ?></p>
     </div>
-    
+        </li>
+        <li class="puces__professions">
     <div class="carte__profession">
+    <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/profession.jpg" alt="" />
     <h4><?php echo get_the_title(127);?></h4>
     <p><?php echo get_field("texte", 127) ?></p>
     </div>
-     
+        </li>
+        <li class="puces__professions">
      <div class="carte__profession">
+     <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/profession.jpg" alt="" />
     <h4><?php echo get_the_title(128);?></h4>
     <p><?php echo get_field("texte", 128) ?></p>
      </div>
-     
+        </li>
+        <li class="puces__professions">
     <div class="carte__profession">
+    <img src="<?php echo get_template_directory_uri(); ?>/liaisons/images/profession.jpg" alt="" />
     <h4><?php echo get_the_title(125);?></h4>
     <p><?php echo get_field("texte", 125) ?></p>
     </div>
-
+        </li>
+    </ul>
     </div>
+<style>
+    .liste__professions{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .puces__professions{
+        background-color:#C8D8E4 ;
+        text-align: center;
+        height: auto;
+        margin: 1%;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        box-shadow: #666 2px 2px 4px;
+    }
+</style>
 
     <!--Témoignages-->
 <?php
     $args = array(
         'post_type' => 'témoignages',
-        'posts_per_page' => -1,
+        'posts_per_page' => 3,
         'post_status' => 'publish',
         'order_by' => 'post_date',
         'order' => 'ASC',
@@ -246,9 +274,9 @@
         border: 1px solid black;
     }
     .carte__profession{
-        width: 35%;
-        padding:10px 10px 10px 10px;
-        background-color:#C8D8E4 ;
+        width: 405px;
+        padding:10px 10px 50px 10px;
+        
     }
    
     @media screen and (max-width: 800px) {
@@ -258,32 +286,5 @@
         }
     }
 </style>
-<script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
-</script>
 

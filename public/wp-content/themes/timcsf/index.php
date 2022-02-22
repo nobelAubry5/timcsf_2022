@@ -1,12 +1,15 @@
 <?php get_header(); ?>
-
-    <video width="100%" autoplay muted>
+<div class="entete__accueil">
+    <h1>Techniques d'intégration multimédia</h1>
+    <h2>Web et Apps</h2>
+</div>
+    <video width="100%" controls>
     <source src="<?php echo get_template_directory_uri(); ?>/liaisons/videos/programme_tim.mp4" type="video/mp4">
     Your browser does not support HTML video.
     </video>
-    <h1>Techniques d'intégration multimédia</h1>
-    <h2>Web et Apps</h2>
-    
+
+
+
     <div class="axes__accueil">
         
         <div class="carte__axes">
@@ -54,9 +57,49 @@
     
     <div class="projets_accueil">
         <h2>Projets</h2>
+        <!--Projets_accueil-->
+        <div class="slideshow-container">
+        <?php
+            $args = array(
+                'post_type' => 'projets',
+                'posts_per_page' => 6,
+                'post_status' => 'publish',
+                'order_by' => 'post_date',
+                'order' => 'ASC',
+            );
         
-        
+            $the_query = new WP_Query( $args );?>
+            
+            <?php
+            if($the_query->have_posts()){?>
+
+            
+            <?php
+                while($the_query->have_posts()) {?>
+            <div class="mySlides fade">
+                        <?php
+                    $the_query->the_post();?>
+                    <?php //Photo obtient un tableau (sizes) contenant les différentes tailles d'image
+                    $photo=get_field("image_1");
+                    //ici on affiche seulement la taille thumbnail
+                    ?>
+                    <img src="<?php echo $photo["sizes"]["medium"]; ?>" alt="<?php echo get_field("titre"); ?> "/>
+                    <ul>
+                        <li><?php echo get_field("titre");?></li>
+                    </ul>
+            </div>
+                
+                <?php }?>
+                
+            <?php }
+        ?>
+            
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
     
+    </div>
     </div>
     <style>
         .carte__axes:hover{
@@ -102,6 +145,22 @@
         .projets_accueil{
         background-color:#ECECEC ;
         }
+        
+        .mySlides img{
+            border: 2px solid black;
+            margin-top: 20px;
+        }
+        .mySlides ul{
+            list-style: none;
+        }
+        .mySlides li{
+            font-family: Open Sans;
+            font-style: normal;
+            font-size: 25px;
+        }
+        
+       
+        
 
     </style>
 <!--    --><?php ////si la page reçoit des articles
@@ -137,5 +196,101 @@
 
 <?php get_footer(); ?>
 <style>
+    
+    .entete__accueil{
+        bottom: 80px;
+        width: 960px;
+        background-color:rgba(13, 36, 43, 0.5) ;
+        /*position: absolute;*/
+        color:white;
+       
+    }
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
 
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: white;
+    }
+
+
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        padding-left: 80px;
+        border: 1px solid black;
+    }
+    .fade img{
+        border:3px solid black;
+    }
+    .fade p{
+        width: 40%;
+    }
+    .axes_formation{
+        background-color: rgba(200, 216, 228, 0.75);;
+    }
+    @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .prev, .next {font-size: 11px}
+        .fade{
+            padding-right: 60px;
+        }
+    }
 </style>
+
