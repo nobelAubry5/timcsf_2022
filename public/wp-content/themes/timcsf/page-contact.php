@@ -6,20 +6,7 @@
 
     
     <h1>Nous joindre</h1>
-<?php
-    $posts = get_posts(array(
-        'post_type' => 'responsables',
-        'posts_per_page' => -1,
-        'post_status' => 'publish',
-        'order_by' => 'post_date',
-        'order' => 'ASC',
-    ));
-    if(isset($_GET["ID"])){
-        $destinataire = get_field("id_responsable", $_GET["ID"]);
-    }else{
-        $destinataire = "";
-    }
-?>
+
     <?php
     //à mettre dans la page pour afficher les responsables
     //**************************************************
@@ -33,6 +20,15 @@
         'order' => 'ASC',
     );
     ?>
+<?php
+    $posts = get_posts(array(
+        'post_type' => 'responsables',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'order_by' => 'post_date',
+        'order' => 'ASC',
+    ));
+?>
 
    <div class="row">
     <?php $the_query = new WP_Query( $args );?>
@@ -66,11 +62,19 @@
                         <select id="responsables" name="responsables" class="effect-17">
                             <option value="">Choisir un destinataire</option>
                             <?php
+                                if($the_query->have_posts()){
+                                    if(isset($_GET["ID"])){
+                                        $destinataire = $_GET["ID"];
+                                    }else{
+                                        $destinataire = "";
+                                    }
                                 while($the_query->have_posts()) {
                                 $the_query->the_post();
                                 ?>
-                            <option value="<?php echo get_field("prenom");?> <?php echo get_field("nom");?>"><?php echo get_field("prenom");?> <?php echo get_field("nom");?></option>
+                            <option <?php if($destinataire==acf_get_valid_post_id()){?> selected <?php }?> value = "<?php echo get_field("prenom");?> <?php echo get_field("nom");?>"><?php echo get_field("prenom");?> <?php echo get_field("nom");?></option>
                             <?php } ?>
+                                <?php } ?>
+                                <?php } ?>
                         </select><br>
                         <p class="erreur__message">
                         </p>
@@ -91,7 +95,7 @@
                         </p>
                         </div>
                         
-
+                        <div class="g-recaptcha" data-sitekeys="6Ld2xZAUAAAAAJ2AKX2HBkO1X3vSb6vuQ4ireXAK"></div>
                         <button class="btn-5">Envoyer</button>
                     </form>
 
@@ -110,7 +114,7 @@
             <ul class="responsables__liste">
                 <li class="responsables__puces"><?php echo get_field("prenom");?> <?php echo get_field("nom");?></li>
                 <li class="responsables__puces"><?php echo get_field("responsabilite");?></li>
-                <li class="responsables__puces"><?php echo get_field("courriel");?></li>
+                <li class="responsables__puces"><a href="mailto:<?php echo get_field("courriel");?>"><?php echo get_field("prenom"); ?> <?php echo get_field("nom"); ?></a></li>
                 <li class="responsables__puces"><?php echo get_field("telephone");?></li>
             </ul>
                     <hr class="ligne__separation">
@@ -242,9 +246,42 @@
         
         <?php }?>
         </div>
-    <?php }
-?>
+  
    </div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<?php
+//    if(isset($_POST["g-recaptcha-response"])){
+//        $captcha = $_POST["g-recaptcha-response"];
+//    }
+//    if($captcha!=false){
+//        if(count($arrChampsErreur)==0){
+//            if(count($arrChampsErreur)==0){
+//                $secretKey="6Ld2xZAUAAAAAKTP2SAEIyikTTN2uzxmgcNRaiLv";
+//                $ip=$_SERVER['REMOTE_ADDR'];
+//                $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=.$ip");
+//                $responseKeys = json_decode($response,true);
+//
+//                if(intval($responseKeys["success"])===1){
+//                    $post= get_post($destinataire);
+//
+//                    $to = get_option('admin_email');
+//
+//                    $subject = "Quelqu'un a envoyé une message depuis le site" . get_bloginfo('name');
+//
+//                    $headers = "From: ". $courriel . "\r\n" .
+//                        "Reply-To: " . $courriel . "\r\n";
+//                    $envoi = wp_mail($to, $subject, strip_tags($message), $headers);
+//
+//                    if($envoi){
+//                        array_push($arrChampsErreur,["retroactions", "envoyer"]);
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    ?>
+
+?>
 <?php
     get_footer();
 ?>
