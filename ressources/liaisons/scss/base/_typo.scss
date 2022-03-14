@@ -21,18 +21,33 @@ body {
 }
 
 h1,
-.titreNiveau1,
+.titreNiveau1{
+  font-family: $fontePrimaire;
+  font-size: 50px;
+}
 h2,
-.titreNiveau2,
+.titreNiveau2{
+  font-family: $fontePrimaire;
+  font-size: 40px;
+}
 h3,
 .titreNiveau3 {
   font-family: $fontePrimaire;
-  font-weight: 500;
+  font-size: 35px;
+}
+h4,
+.titreNiveau4 {
+  font-family: $fontePrimaire;
+  font-size: 25px;
+}
+h5,
+.titreNiveau5 {
+  font-family: $fontePrimaire;
+  font-size: 25px;
 }
 
 h1,
 .titreNiveau1 {
-  @include fontSize(28px);
   margin: 0;
   &--desktop {
     font-size: 48px;

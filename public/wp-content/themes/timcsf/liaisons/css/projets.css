@@ -1,0 +1,80 @@
+.projets__filtre{
+    padding: 20px 20px 20px 20px;
+    border: 1px solid black;
+}
+.projets__filtre button{
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+}
+.projets__filtre button:hover{
+    background-color: #0D242B;
+    color: white;
+}
+.projets__filtre button:active{
+    background-color: red;
+    color: white;
+}
+.liste__projets{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.liste__axes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.carte__projet:hover{
+    border: 1px solid black;
+    transform: scale(1.0);
+}
+.projet__annee{
+    width: 40%;
+    background-color: black;
+    color:white;
+    text-align: center;
+    border-radius:20px ;
+    margin-top: 5px;
+}
+.puces__projets img{
+    width: 300px;
+    height: 160px;
+    border:2px solid black;
+    margin-right: 6px;
+}
+.puces__projets{
+    text-align: left;
+    height: auto;
+    margin-top: 1%;
+    margin-bottom: 20px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.titre__projet{
+    font-family: Open Sans Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+}
+.finissant__projet{
+    font-family: Open Sans Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.lien__carte{
+    text-decoration: none;
+    color: black;
+}
+.projets__pagination{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

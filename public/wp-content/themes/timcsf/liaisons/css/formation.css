@@ -1,0 +1,215 @@
+.accordion {
+    background-color: white;
+    opacity: 0.8;
+    color: #444;
+    cursor: pointer;
+    padding-top: 15px;
+    width: 55%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-bottom:1px solid black;
+    padding-bottom: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+.accordion{
+    width: 100%;
+}
+}
+
+.active, .accordion:hover {
+    background-color: #2B6777;
+    color:white;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+.active, .panel{
+    background-color: white;
+    color: white;
+}
+.formation__competences{
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    color: black;
+}
+.formation__axeimage{
+    float: left;
+    width: 50%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: white;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    padding-left: 80px;
+    border: 1px solid black;
+}
+.fade img{
+    border:3px solid black;
+}
+.fade p{
+    width: 40%;
+}
+.axes_formation{
+    background-color: rgba(200, 216, 228, 0.75);;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next {font-size: 11px}
+    .fade{
+        padding-right: 60px;
+    }
+}
+
+
+.formation__infos{
+    background-color: #C8D8E4;
+    opacity: 0.8;
+    content: "";
+    display: table;
+    clear: both;
+}
+.formation__grille{
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+}
+.formation__inscription{
+    float: left;
+    width: 50%;
+    padding-left: 70px;
+    padding-right: 20px;
+    margin-bottom: 10px;
+}
+.formation__axe{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formation__professions{
+    /*border: 1px solid black;*/
+}
+.carte__profession{
+    width: 405px;
+    padding:10px 10px 50px 10px;
+
+}
+.liste__professions{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.puces__professions{
+    background-color:#C8D8E4 ;
+    text-align: left;
+    height: auto;
+    margin: 1%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.8;
+    -webkit-box-shadow: 11px 4px 3px 1px #2B6777;
+    box-shadow: 11px 4px 3px 1px #2B6777;
+
+}
+
+@media screen and (max-width: 800px) {
+    .formation__grille, .formation__inscription {
+        width: 100%;
+        padding: 0;
+    }
+    .formation__axeimage{
+
+    }
+    .formation__axeimage, .formation__competences{
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+

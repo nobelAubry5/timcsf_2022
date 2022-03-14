@@ -1,0 +1,102 @@
+.carte__axes:hover{
+    background-color:#FDEF86;
+    color:white;
+    transform: rotateX(7deg) translateY(-6px) scale(1.05);
+    -webkit-transition: background 20ms ease-in;
+    -moz-transition: background 20ms ease-in;
+    -ms-transition: background 20ms ease-in;
+    -o-transition: background 20ms ease-in;
+    transition: background 20ms ease-in;
+}
+.lien__carte{
+    text-decoration: none;
+    color: black;
+}
+.axes__accueil{
+    background-color: #2B6777;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.carte__axes{
+    justify-content: center;
+    background-color: white;
+    color:black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 320px;
+    margin-left: 30px;
+    -webkit-box-shadow: 2px 16px 5px -5px rgba(0,0,0,0.38);
+    box-shadow: 2px 16px 5px -5px rgba(0,0,0,0.38);
+}
+.carte__axes h4 {
+    font-family: Open Sans Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size:1.25em;
+    padding-left: 10px;
+
+}
+.projets_accueil{
+    background-color:#ECECEC ;
+}
+
+.mySlides img{
+    border: 2px solid black;
+    margin-top: 20px;
+}
+.mySlides ul{
+    list-style: none;
+}
+.mySlides li{
+    font-family: Open Sans;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.carte__accueil{
+    width: 80%;
+}
+video{
+    max-width: 100%;
+    margin: 0 auto;
+}
+.entete__accueil{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    bottom: 80px;
+    width: 70%;
+    background-color:#2B6777 ;
+    color:white;
+    padding-left: 20px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    opacity: 0.8;
+    -webkit-box-shadow: 29px 12px 0px 0px #C8D8E4;
+    box-shadow: 29px 12px 0px 0px #C8D8E4;
+}
+@media screen and (max-width: 800px) {
+.entete__accueil{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 20px;
+    width: 90%;
+}
+}
+
+.axes_formation{
+    background-color: rgba(200, 216, 228, 0.75);;
+}
+.bouton__accueil{
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}

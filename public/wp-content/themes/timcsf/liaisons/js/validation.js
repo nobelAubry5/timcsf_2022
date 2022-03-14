@@ -52,6 +52,10 @@ var objJSONErreurs= {
         "vide":'Vous devez choisir un destinataire',
         "pattern":""
     },
+    "telephone":{
+        "vide": 'Entrez votre numéro de téléphone (format:(123) 456-7890)!',
+        "pattern": "Veuillez entrer un numéro de téléphone de format valide (format:(123) 456-7890)!"
+    },
     "sujetMessage":{
         "vide": 'Vous devez entrer un sujet de message',
         "pattern": "Les chiffres, les lettres, les accents français, les espaces, les tirets et les apostrophes sont permis."
@@ -64,7 +68,7 @@ var objJSONErreurs= {
 }
 var page =
     {
-        liste: {nom: null, courriel: null, responsables: null, sujetMessage: null, message: null},
+        liste: {nom: null, courriel: null, responsables: null,telephone: null, sujetMessage: null, message: null},
 
         initialiser: function () {
             document.querySelector(".bouton").formNoValidate = true;
@@ -109,7 +113,7 @@ var page =
                     label.classList.add("erreur__label");
                     conteneur.classList.add("shake");
                     objCible.classList.add('erreur');
-                    conteneur.querySelector('.erreur__message').innerHTML = '<span class="spriteRETRO spriteRETRO--warning"></span>' + objJSONErreurs[objCible.id].pattern;
+                    conteneur.querySelector('.erreur__message').innerHTML = '<span class="spriteRETRO spriteRETRO--warning"><i class="fa fa-exclamation-circle" aria-hidden="true" style="font-size:30px;color:#DC0012;"></i></span>' + objJSONErreurs[objCible.id].pattern;
                     erreurVerif.value = 'false';
                     //element.classList.add("shake");
                     if(conteneur.querySelector('.spriteRETRO--ok'))
@@ -126,7 +130,7 @@ var page =
             {
                 label.classList.add('erreur__label');
                 objCible.classList.add('erreur');
-                conteneur.querySelector('.erreur__message').innerHTML = '<span class="spriteRETRO spriteRETRO--warning"></span>' + objJSONErreurs[objCible.id].vide;
+                conteneur.querySelector('.erreur__message').innerHTML = '<span class="spriteRETRO spriteRETRO--warning"><i class="fa fa-exclamation-circle" aria-hidden="true" style="font-size:30px;color:#DC0012;"></i></span>' + objJSONErreurs[objCible.id].vide;
                 conteneur.classList.add("shake");
                 if(conteneur.querySelector('.spriteRETRO--ok'))
                 {
@@ -168,5 +172,6 @@ window.addEventListener("load", page.initialiser.bind(page));
 document.getElementById("nom").addEventListener("blur", page.validerChaine.bind(page));
 document.getElementById("courriel").addEventListener("blur", page.validerChaine.bind(page));
 document.getElementById("sujetMessage").addEventListener("blur", page.validerChaine.bind(page));
+document.getElementById("telephone").addEventListener("blur", page.validerChaine.bind(page));
 document.getElementById("message").addEventListener("blur", page.validerChaine.bind(page));
 document.getElementById("responsables").addEventListener("blur", page.validerDestinataire.bind(page));

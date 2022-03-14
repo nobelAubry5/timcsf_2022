@@ -1,0 +1,124 @@
+/*Skills bar*/
+.fiche__imagepresentation{
+
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.fiche_image{
+    float: left;
+    width: 40%;
+    padding-right: 20px;
+}
+.fiche__presentation{
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+}
+@media screen and (max-width: 800px) {
+    .fiche_image, .fiche__presentation {
+        width: 100%;
+        padding: 0;
+    }
+    .fiche__interets{
+        width: 100%;
+        padding: 0;
+    }
+    .fiche__lien{
+        width: 100%;
+        padding: 0;
+    }
+
+}
+.fiche__lieninterets{
+    content: "";
+    display: table;
+    clear: both;
+    margin-top: 30px;
+}
+.fiche__lien{
+    float: left;
+    width: 40%;
+    background-color: #ECECEC;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.fiche__interets{
+    border: 1px solid black;
+    float: left;
+    width: 50%;
+    padding-left: 30px;
+    margin-left: 50px;
+}
+
+
+/*Skills bar*/
+progress[value] {
+    appearance: none;
+    border: none;
+    width: 80%;
+    height: 13px;
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgb(0 0 0 / 50%) inset;
+    color: royalblue;
+
+    margin: 1.5em 0 2.5em;
+}
+progress[value]::-webkit-progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius:3px;
+
+    /* Let's animate this */
+    animation: animate-stripes 5s linear infinite;
+}
+
+@keyframes animate-stripes { 100% { background-position: -100px 0; } }
+
+/* Let's spice up things little bit by using pseudo elements. */
+
+progress[value]::-webkit-progress-value:after {
+    /* Only webkit/blink browsers understand pseudo elements on pseudo classes. A rare phenomenon! */
+    content: '';
+    position: absolute;
+
+    width:5px; height:5px;
+    top:7px; right:7px;
+
+    /*background-color: white;*/
+    background: blue;
+    border-radius: 100%;
+}
+
+/* Firefox provides a single pseudo class to style the progress element value and not for container. -moz-progress-bar */
+
+progress[value]::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+            -moz-linear-gradient( 135deg,
+            transparent,
+            transparent 33%,
+            rgba(0,0,0,.1) 33%,
+            rgba(0,0,0,.1) 66%,
+            transparent 66%),
+            -moz-linear-gradient( top,
+            rgba(255, 255, 255, .25),
+            rgba(0,0,0,.2)),
+            -moz-linear-gradient( left, #09c, #f44);
+
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius:3px;
+
+    /* Firefox doesn't support CSS3 keyframe animations on progress element. Hence, we did not include animate-stripes in this code block */
+}
+

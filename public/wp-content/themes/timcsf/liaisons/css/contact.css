@@ -1,0 +1,124 @@
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.contact__formulaire{
+    float: left;
+    width: 65%;
+
+}
+.carte__responsable{
+    float: left;
+    width: 35%;
+
+}
+.carte__responsable a{
+    color:black;
+    text-decoration: none;
+}
+.carte__responsable a:hover{
+    color:#2B6777;
+}
+.img__responsable{
+    padding-left: 120px;
+}
+.responsables__liste{
+    list-style: none;
+    text-align: center;
+}
+.responsables__puces:first-child{
+    font-family: Open Sans Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.875em;
+}
+.responsables__puces:nth-child(2){
+    font-family: Open Sans;
+    font-weight: normal;
+    font-size: 1.25em;
+}
+.responsables__puces:nth-child(3){
+    font-family: Open Sans;
+    font-weight: normal;
+    font-size: 1.125em;
+}
+input, select, textarea {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 800px) {
+    .contact__formulaire, .carte__responsable {
+        width: 100%;
+        padding: 0;
+    }
+    .img__responsable{
+        margin-left: 50px;
+    }
+    input, select, textarea {
+        width: 80%;
+        padding: 7px 15px;
+        margin: 8px 0 45px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+}
+.erreur__message{
+    margin: 0 0 0 0;
+    color: red;
+}
+.spriteRETRO {
+    display: inline-block;
+    width:32px;
+    height:32px;
+//background-color: red;
+//background-image: url(../images/icone_alert.png);
+//background-repeat: no-repeat;
+    vertical-align: middle;
+    transform: scale(0.75, 0.75);
+}
+
+.spriteRETRO--ok {
+    background-position:0 0;
+
+}
+
+.spriteRETRO--warning {
+    background-position:-34px 0;
+}
+.erreur__label{
+    border-bottom: 2px solid #DC0012;
+}
+
+.shake {
+
+    -webkit-animation: shake .5s linear ;
+//transform-origin: 50% 50%;
+}
+@-webkit-keyframes shake {
+    8%, 41% {
+        -webkit-transform: translateX(-10px);
+    }
+    25%, 58% {
+        -webkit-transform: translateX(10px);
+    }
+    75% {
+        -webkit-transform: translateX(-5px);
+    }
+    92% {
+        -webkit-transform: translateX(5px);
+    }
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+}
+.spriteRETRO--erreur {
+    background-position:-68px 0;
+}

@@ -4,13 +4,34 @@ get_header();
 echo"404.php"?>
 
 <main class="page">
-    <h2>Oups! La page demandée n'existe pas!</h2>
-    
-    <p>On as-tu mal nommé quelque chose?</p>
-    <img src="<?php echo get_template_directory_uri();?>/liaisons/images/point_exclamation.png" alt="Erreur 404!">
+    <div class="page__erreur">
+        <h1>404</h1>
+        <h2>Page non trouvé</h2>
+    </div>
+    <img src="<?php echo get_template_directory_uri();?>/liaisons/images/404.png" alt="Erreur 404!">
 </main>
 
-<?php
-    //Appel de l'inclusion d'entete de pied de page
-        //get_sidebar();
-            get_footer()?>
+<?php get_footer()?>
+<style>
+    .page__erreur{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .page__erreur h1,h2{
+        text-align: center;
+    }
+    .page__erreur h1{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 150px;
+    }
+    .page__erreur h2{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 50px;
+    }
+</style>
